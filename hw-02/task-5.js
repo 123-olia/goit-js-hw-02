@@ -8,11 +8,10 @@
 
 const checkForSpam = function(message) {
   let string = message.toLowerCase();
-  for (const word of string) {
-    if (string.includes('sale') || string.includes('spam')) {
-      return true;
-    }
+  if (string.includes('sale') || string.includes('spam')) {
+    return true;
   }
+
   return false;
 };
 

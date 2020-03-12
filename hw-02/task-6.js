@@ -25,16 +25,15 @@ const add = (function() {
   let total = 0;
 
   do {
-    input = +prompt('Введите любое число:', '');
+    input = prompt('Введите любое число:', '');
 
-    if (input == '' || input == null || isNaN(input)) break;
-    numbers.push(input);
+    if (input === null) break;
+    if (Number.isNaN(Number(input)) || input === '') {
+      alert('Введите число!');
+      continue;
+    }
+    numbers.push(Number(input));
   } while (true);
-
-  //   if (Number.isNaN(Number(input))) {
-  //     alert('Введите число!');
-  //   }
-  // } while (input !== null);
 
   for (let i = 0; i < numbers.length; i += 1) {
     total += numbers[i];
